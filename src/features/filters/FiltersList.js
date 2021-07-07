@@ -1,5 +1,6 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { filterRemoved, allFiltersRemoved } from './filtersSlice';
 
 import {
     FilterListWrapper,
@@ -10,11 +11,17 @@ import {
 } from './FiltersListElements';
 
 export const FiltersList = () => {
+    const dispatch = useDispatch();
     const selectedFilters = useSelector(state => state.selectedFilters);
 
     const renderedFilters = selectedFilters.map(filter => {
         return (
-            <Filter key={filter}>{filter}</Filter>
+            <Filter 
+                key={filter} 
+                onClick={() => dispatch(filterRemoved(filter))}
+            >
+                {filter}
+            </Filter>
         )
     })
 
@@ -30,7 +37,7 @@ export const FiltersList = () => {
                 <FiltersWrapper>
                     {renderedFilters}
                 </FiltersWrapper>
-                <ClearFilters>Clear</ClearFilters>
+                <ClearFilters onClick={() => dispatch(allFiltersRemoved())}>Clear</ClearFilters>
             </FilterListContainer>
         </FilterListWrapper>
     )

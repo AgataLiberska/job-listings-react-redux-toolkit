@@ -12,10 +12,11 @@ const filtersSlice = createSlice({
             }
         },
         filterRemoved: (state, action) => {
-            state.filter(item => item !== action.payload);
+            const index = state.indexOf(action.payload);
+            state.splice(index, 1);
         },
-        allFiltersRemoved: (state, action) => {
-            state = initialState;
+        allFiltersRemoved: (state) => {
+            state.splice(0, state.length)
         }
     }
 })
