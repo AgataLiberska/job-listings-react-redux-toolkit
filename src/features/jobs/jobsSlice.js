@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { jobListings } from '../../data/jobListings';
+import jobListings from '../../data/jobListings';
 
 const initialState = jobListings;
 
 const jobsSlice = createSlice({
-    name: 'jobs',
+    name: "jobs",
     initialState,
     reducers: {}
 });

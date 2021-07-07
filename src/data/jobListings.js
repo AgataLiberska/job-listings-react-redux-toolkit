@@ -1,8 +1,8 @@
-export const jobListings = [
+const jobListings = [
     {
         "id": 1,
         "company": "Photosnap",
-        "logo": require("./images/photosnap.svg").default,
+        "logo": require("../images/photosnap.svg").default,
         "new": true,
         "featured": true,
         "position": "Senior Frontend Developer",
@@ -21,7 +21,7 @@ export const jobListings = [
     {
         "id": 2,
         "company": "Manage",
-        "logo": require("./images/manage.svg").default,
+        "logo": require("../images/manage.svg").default,
         "new": true,
         "featured": true,
         "position": "Fullstack Developer",
@@ -40,7 +40,7 @@ export const jobListings = [
     {
         "id": 3,
         "company": "Account",
-        "logo": require("./images/account.svg").default,
+        "logo": require("../images/account.svg").default,
         "new": true,
         "featured": false,
         "position": "Junior Frontend Developer",
@@ -60,7 +60,7 @@ export const jobListings = [
     {
         "id": 4,
         "company": "MyHome",
-        "logo": require("./images/myhome.svg").default,
+        "logo": require("../images/myhome.svg").default,
         "new": false,
         "featured": false,
         "position": "Junior Frontend Developer",
@@ -78,7 +78,7 @@ export const jobListings = [
     {
         "id": 5,
         "company": "Loop Studios",
-        "logo": require("./images/loop-studios.svg").default,
+        "logo": require("../images/loop-studios.svg").default,
         "new": false,
         "featured": false,
         "position": "Software Engineer",
@@ -98,7 +98,7 @@ export const jobListings = [
     {
         "id": 6,
         "company": "FaceIt",
-        "logo": require("./images/faceit.svg").default,
+        "logo": require("../images/faceit.svg").default,
         "new": false,
         "featured": false,
         "position": "Junior Backend Developer",
@@ -117,7 +117,7 @@ export const jobListings = [
     {
         "id": 7,
         "company": "Shortly",
-        "logo": require("./images/shortly.svg").default,
+        "logo": require("../images/shortly.svg").default,
         "new": false,
         "featured": false,
         "position": "Junior Developer",
@@ -137,7 +137,7 @@ export const jobListings = [
     {
         "id": 8,
         "company": "Insure",
-        "logo": require("./images/insure.svg").default,
+        "logo": require("../images/insure.svg").default,
         "new": false,
         "featured": false,
         "position": "Junior Frontend Developer",
@@ -157,7 +157,7 @@ export const jobListings = [
     {
         "id": 9,
         "company": "Eyecam Co.",
-        "logo": require("./images/eyecam-co.svg").default,
+        "logo": require("../images/eyecam-co.svg").default,
         "new": false,
         "featured": false,
         "position": "Full Stack Engineer",
@@ -177,7 +177,7 @@ export const jobListings = [
     {
         "id": 10,
         "company": "The Air Filter Company",
-        "logo": require("./images/the-air-filter-company.svg").default,
+        "logo": require("../images/the-air-filter-company.svg").default,
         "new": false,
         "featured": false,
         "position": "Front-end Dev",
@@ -195,3 +195,5 @@ export const jobListings = [
         ]
     }
 ]
+
+export default jobListings;
