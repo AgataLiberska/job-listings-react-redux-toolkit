@@ -1,5 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { filterAdded } from '../filters/filtersSlice';
+
 import { 
     JobListWrapper,       
     JobListContainer, 
@@ -17,6 +19,7 @@ import {
 } from './JobsListElements';
 
 export const JobsList = () => {
+    const dispatch = useDispatch();
     const jobs = useSelector((state) => state.jobs);
 
     const renderedJobs = jobs.map(job => {
@@ -39,21 +42,21 @@ export const JobsList = () => {
                     </div>
                 </JobInfo>
                 <JobFilterContainer>
-                    <JobFilter>
+                    <JobFilter onClick={() => dispatch(filterAdded(job.role))}>
                         {job.role}
                     </JobFilter>
-                    <JobFilter>
+                    <JobFilter onClick={() => dispatch(filterAdded(job.level))}>
                         {job.level}
                     </JobFilter>
                     { job.languages ? 
                         job.languages.map(language => (
-                        <JobFilter >
+                        <JobFilter onClick={() => dispatch(filterAdded(language))}>
                             {language}
                         </JobFilter>))
                         : null }
                     { job.tools ? 
                         job.tools.map(tool => (
-                        <JobFilter >
+                        <JobFilter onClick={() => dispatch(filterAdded(tool))}>
                             {tool}
                         </JobFilter>)) 
                         : null }

@@ -3,11 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = [];
 
 const filtersSlice = createSlice({
-    name: "filters",
+    name: "selectedFilters",
     initialState,
     reducers: {
         filterAdded: (state, action) => {
-            state.push(action.payload)
+            if (!state.includes(action.payload)) {
+                state.push(action.payload)
+            }
         },
         filterRemoved: (state, action) => {
             state.filter(item => item !== action.payload);
@@ -17,5 +19,7 @@ const filtersSlice = createSlice({
         }
     }
 })
+
+export const { filterAdded, filterRemoved, allFiltersRemoved } = filtersSlice.actions;
 
 export default filtersSlice.reducer;
