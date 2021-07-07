@@ -21,8 +21,30 @@ import {
 export const JobsList = () => {
     const dispatch = useDispatch();
     const jobs = useSelector((state) => state.jobs);
+    const selectedFilters = useSelector(state => state.selectedFilters);
 
-    const renderedJobs = jobs.map(job => {
+    const matchJob = (filter, job) => filter === job.role || filter === job.level || job.languages.includes(filter) || job.tools?.includes(filter);
+
+    const filteredJobs = (jobsArr, filtersArr) => {
+        if (filtersArr.length === 0) {
+            return jobsArr;
+        }
+
+        const jobsToDisplay = jobsArr.filter(job => {
+            let isMatch = true;
+    
+            for (let i=0; i < filtersArr.length; i++ ) {
+                if (!matchJob(filtersArr[i], job)) {
+                    isMatch = false;
+                }
+            }
+            return isMatch;
+        });
+    
+        return jobsToDisplay;
+    }
+
+    const renderedJobs = filteredJobs(jobs, selectedFilters).map(job => {
         return (
             <JobCard key={job.id}>
                 <JobLogo src={job.logo} alt="company logo"/>

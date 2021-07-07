@@ -16,7 +16,7 @@ const filtersSlice = createSlice({
             state.splice(index, 1);
         },
         allFiltersRemoved: (state) => {
-            state.splice(0, state.length)
+            state.splice(0, state.length);
         }
     }
 })
