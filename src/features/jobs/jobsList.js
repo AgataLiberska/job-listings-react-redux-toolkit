@@ -23,14 +23,14 @@ export const JobsList = () => {
     const jobs = useSelector((state) => state.jobs);
     const selectedFilters = useSelector(state => state.selectedFilters);
 
-    const matchJob = (filter, job) => filter === job.role || filter === job.level || job.languages.includes(filter) || job.tools?.includes(filter);
-
     const filteredJobs = (jobsArr, filtersArr) => {
         if (filtersArr.length === 0) {
             return jobsArr;
         }
 
-        const jobsToDisplay = jobsArr.filter(job => {
+        const matchJob = (filter, job) => filter === job.role || filter === job.level || job.languages.includes(filter) || job.tools?.includes(filter);
+
+        const filteredJobs = jobsArr.filter(job => {
             let isMatch = true;
     
             for (let i=0; i < filtersArr.length; i++ ) {
@@ -41,7 +41,7 @@ export const JobsList = () => {
             return isMatch;
         });
     
-        return jobsToDisplay;
+        return filteredJobs;
     }
 
     const renderedJobs = filteredJobs(jobs, selectedFilters).map(job => {
