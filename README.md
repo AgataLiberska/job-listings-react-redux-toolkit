@@ -24,11 +24,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./public/screenshot.png)
+![](./public/Screenshot.png)
 
 ### Links
 
-To be updated.
+- [Solution page on FM](https://www.frontendmentor.io/solutions/react-with-redux-toolkit-A7FgROHdF)
+- [Live demo](https://job-listings-react-redux-toolkit.vercel.app/)
 
 ## My process
 
