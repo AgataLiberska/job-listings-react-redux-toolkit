@@ -25,8 +25,6 @@ export const FiltersList = () => {
         )
     })
 
-    console.log(selectedFilters)
-
     if (selectedFilters.length === 0) {
         return null;
     }

@@ -1,7 +1,6 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { filterAdded } from '../filters/filtersSlice';
-import { JobFilters } from './JobFilters';
+import { useSelector } from 'react-redux';
+import { JobFiltersList } from './JobFiltersList';
 
 import { 
     JobListWrapper,       
@@ -18,7 +17,6 @@ import {
 } from './JobsListElements';
 
 export const JobsList = () => {
-    const dispatch = useDispatch();
     const jobs = useSelector((state) => state.jobs);
     const selectedFilters = useSelector(state => state.selectedFilters);
 
@@ -62,7 +60,7 @@ export const JobsList = () => {
                         <JobDetail>{job.location}</JobDetail>
                     </div>
                 </JobInfo>
-                <JobFilters job={job} />
+                <JobFiltersList job={job} />
             </JobCard>
         )
     })
