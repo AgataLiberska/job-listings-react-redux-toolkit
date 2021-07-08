@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
         --primary: hsl(180, 29%, 50%);
         --background: hsl(180, 52%, 96%);
         --filter: hsl(180, 31%, 95%);
+        --filter-pressed: hsl(180, 39%, 67%);
         --secondary: hsl(180, 14%, 20%);
         --secondary-light: hsl(180, 8%, 52%);
     }

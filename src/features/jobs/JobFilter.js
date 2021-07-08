@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterAdded } from '../filters/filtersSlice';
+import { filterAdded, filterRemoved } from '../filters/filtersSlice';
 
 import {JobFilter} from './JobsListElements';
 
@@ -16,10 +16,18 @@ export const Filter = ({filter}) => {
         } else {
             setIsSelected(false);
         }
-    }, [selectedFilters, filter])
+    }, [selectedFilters, filter]);
+
+    const onFilterClicked = (filter) => {
+        if (isSelected) {
+            dispatch(filterRemoved(filter));
+        } else {
+            dispatch(filterAdded(filter))
+        }
+    }
 
     return (
-        <JobFilter onClick={() => dispatch(filterAdded(filter))} aria-pressed={isSelected}>
+        <JobFilter onClick={() => onFilterClicked(filter)} aria-pressed={isSelected}>
             {filter}
         </JobFilter>
     )

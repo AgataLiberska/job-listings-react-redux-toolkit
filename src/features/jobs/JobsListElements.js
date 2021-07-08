@@ -153,8 +153,18 @@ export const JobFilter = styled.button`
     line-height: 1.5rem;
     color: var(--primary);
     transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+
     &:hover {
         background: var(--primary);
         color: white;
+    }
+
+    &[aria-pressed="true"] {
+        background: var(--filter-pressed);
+        color: white;
+
+        &:hover {
+            background: var(--primary);
+        }
     }
 `
