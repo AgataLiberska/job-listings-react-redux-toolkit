@@ -16,7 +16,7 @@ import {
     JobDetail,
 } from './JobsListElements';
 
-export const JobsList = () => {
+const JobsList = () => {
     const jobs = useSelector((state) => state.jobs);
     const selectedFilters = useSelector(state => state.selectedFilters);
 
@@ -73,3 +73,5 @@ export const JobsList = () => {
         </JobListWrapper>
     )
 }
+
+export default JobsList;

@@ -10,7 +10,7 @@ import {
     ClearFilters
 } from './FiltersListElements';
 
-export const FiltersList = () => {
+const FiltersList = () => {
     const dispatch = useDispatch();
     const selectedFilters = useSelector(state => state.selectedFilters);
 
@@ -40,3 +40,5 @@ export const FiltersList = () => {
         </FilterListWrapper>
     )
 }
+
+export default FiltersList;
